@@ -61,6 +61,8 @@ export default function ZerodhaIntegration() {
   const fetchZerodhaAccount = async () => {
     try {
       setLoading(true);
+      
+      // Use type casting as a temporary solution to work with the new table
       const { data, error } = await supabase
         .from("zerodha_accounts")
         .select("*")
@@ -72,7 +74,7 @@ export default function ZerodhaIntegration() {
       }
 
       if (data) {
-        setZerodhaAccount(data as ZerodhaAccount);
+        setZerodhaAccount(data as unknown as ZerodhaAccount);
         setAutoTrading(data.is_connected);
       }
     } catch (error) {

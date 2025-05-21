@@ -137,6 +137,47 @@ export type Database = {
           },
         ]
       }
+      zerodha_accounts: {
+        Row: {
+          access_token: string | null
+          api_key: string
+          api_secret: string
+          created_at: string
+          id: string
+          is_connected: boolean
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          access_token?: string | null
+          api_key: string
+          api_secret: string
+          created_at?: string
+          id?: string
+          is_connected?: boolean
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          access_token?: string | null
+          api_key?: string
+          api_secret?: string
+          created_at?: string
+          id?: string
+          is_connected?: boolean
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "zerodha_accounts_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
     }
     Views: {
       [_ in never]: never
