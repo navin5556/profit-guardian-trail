@@ -33,3 +33,14 @@ export interface TradeHistory {
   updated_at: string;
   closed_at: string | null;
 }
+
+export interface ZerodhaAccount {
+  id: string;
+  user_id: string;
+  api_key: string;
+  api_secret: string;
+  access_token: string | null;
+  is_connected: boolean;
+  created_at: string;
+  updated_at: string;
+}

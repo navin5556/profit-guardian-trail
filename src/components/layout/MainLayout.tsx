@@ -10,7 +10,8 @@ import {
   ChevronDown, 
   TrendingUp,
   History,
-  LogOut
+  LogOut,
+  Link as LinkIcon
 } from "lucide-react";
 
 interface SideNavItemProps {
@@ -79,6 +80,12 @@ export default function MainLayout({ children }: MainLayoutProps) {
               title="Dashboard"
               to="/dashboard"
               active={currentPath === "/dashboard"}
+            />
+            <SideNavItem
+              icon={<LinkIcon size={18} />}
+              title="Zerodha Integration"
+              to="/zerodha-integration"
+              active={currentPath === "/zerodha-integration"}
             />
             <SideNavItem
               icon={<TrendingUp size={18} />}

@@ -10,6 +10,7 @@ import MainLayout from "./components/layout/MainLayout";
 import Index from "./pages/Index";
 import Auth from "./pages/Auth";
 import Dashboard from "./pages/Dashboard";
+import ZerodhaIntegration from "./pages/ZerodhaIntegration";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -30,6 +31,16 @@ const App = () => (
                 <ProtectedRoute>
                   <MainLayout>
                     <Dashboard />
+                  </MainLayout>
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/zerodha-integration"
+              element={
+                <ProtectedRoute>
+                  <MainLayout>
+                    <ZerodhaIntegration />
                   </MainLayout>
                 </ProtectedRoute>
               }
